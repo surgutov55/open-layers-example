@@ -1,0 +1,48 @@
+{
+  "extends": ["plugin:@nx/typescript", "../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.js"],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "warn",
+          {
+            "type": "attribute",
+            "prefix": "gpn",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/use-lifecycle-interface": "error",
+        "@angular-eslint/no-empty-lifecycle-method": "off",
+        "no-dupe-else-if": "warn",
+        "no-console": ["warn"],
+        "object-curly-spacing": ["error", "always"],
+        "space-before-blocks": "error",
+        "max-depth": ["error", 5],
+        "space-before-function-paren": 0,
+        "template-curly-spacing": ["error", "never"],
+        "no-inline-comments": "error",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+        "@typescript-eslint/no-empty-lifecycle-method": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "indent": ["error", 2, { "SwitchCase": 1 }]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "plugins": ["@angular-eslint/eslint-plugin", "prettier"],
+      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:prettier/recommended", "prettier"]
+    }
+  ]
+}
